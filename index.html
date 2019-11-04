@@ -8,7 +8,14 @@
 	</head>
 	<body>
 		<header>
-			<h1>STORE</h1>
+			<img src="images/logo.jpg" id="logo">
+			<nav>
+				<ul>
+					<li>MEN</li>
+					<li>WOMEN</li>
+					<li>CART</li>
+				</ul>
+			</nav>
 		</header>
 
 		<main>
@@ -16,15 +23,55 @@
 		</main>
 		<script src="index.js"></script>
 		<script type="text/javascript">
-			
-			for (var i = 0; i < arrayItems.length; i++){
-				var s = $('<span></span>'); 
+			$(document).ready(function(){
+				var $body = $('body');
 
-				s.text(arrayItems[i].color);
-				s.append(arrayItems[i].picture);
-				s.appendTo($('body'));
-			}
+				$('#logo').css('height', '400px');
+				$('#logo').css('width', '50%');
+				$('#logo').css('margin-left', '400px');
+				$('#logo').css('margin-top', '-100px');
+
+				var cart = [];
+				var x = {};
+
+				for (var i = 0; i < arrayItems.length; i++){
+					var s = $('<span></span>'); 
+					var s1 = $('<span></span>'); 
+					var s2 = $('<span></span>');
+					var s3 = $('<span></span>')
+					//var button = $('<button id=' + i + '></button>');
+					var button = $('<button> Add </button>');
+					//button.text('Add');
+					var id = i;
+
+
+		            s1.append(arrayItems[i].picture);
+
+					s2.append(arrayItems[i].color);
+					s2.append(arrayItems[i].size);
+					s2.append(arrayItems[i].category);
+					s2.append(arrayItems[i].type);
+	                s3.append(arrayItems[i]) 
+					button.appendTo(s);
+
+				    s1.appendTo(s);
+					s2.appendTo(s);
+					s3.appendTo(s);
+					s.appendTo($('body'));
+
+					
+				}
+
+				$("span").click(function() {
+						
+						//cart.push(this.innerText);
+						console.log(this);
+					});
+
+			});
+		
 			
+
 			
 		
 		</script>
