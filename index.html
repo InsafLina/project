@@ -16,15 +16,39 @@
 		</main>
 		<script src="index.js"></script>
 		<script type="text/javascript">
-			
+			var cart = [];
+
 			for (var i = 0; i < arrayItems.length; i++){
 				var s = $('<span></span>'); 
+				var s1 = $('<span></span>'); 
+				var s2 = $('<span></span>');
+				var button = $('<button></button>');
+				button.text('Add');
+				var id = i;
 
-				s.text(arrayItems[i].color);
-				s.append(arrayItems[i].picture);
+
+	            s1.append(arrayItems[i].picture);
+
+				s2.append(arrayItems[i].color);
+				s2.append(arrayItems[i].size);
+				s2.append(arrayItems[i].category);
+				s2.append(arrayItems[i].type);
+
+				button.appendTo(s);
+
+			    s1.appendTo(s);
+				s2.appendTo(s);
 				s.appendTo($('body'));
+
+				
 			}
+
+			$('button').click(function() {
+					cart.push(arrayItems[id]);
+					// reduce the quantity 
+				});
 			
+
 			
 		
 		</script>
