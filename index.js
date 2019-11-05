@@ -66,6 +66,8 @@ $(document).ready(function(){
 					 s.attr('class', 'big');
 					 var s1 = $('<div></div>');
 					 var s2 = $('<div></div>');
+					 s2.attr('id', 'text');
+
 					 var s3 = $('<div></div>');
 					 var s4 = $('<div></div>');
 					
@@ -135,10 +137,21 @@ $(document).ready(function(){
 				});
 
 
-				$('#card').click(function(){
-				    alert('you have pirchased the total of '+'\n'+ s +' TND');
+				// $('#card').click(function(){
+				//     alert('you have pirchased the total of '+'\n'+ s +' TND');
 
+				// });
+
+				$('#card').click(function(){
+					var txt;
+					  if (confirm('you have pirchased the total of '+ s +' TND')) {
+					    txt = "You pressed OK!";
+					  } else {
+					   s = 0;
+					  }
 				});
+
+
 
 				$('#womenBtn').click(function(){
 					$('main').empty();
