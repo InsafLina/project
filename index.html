@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -11,68 +10,122 @@
 			<img src="images/logo.jpg" id="logo">
 			<nav>
 				<ul>
-					<li>MEN</li>
-					<li>WOMEN</li>
-					<li>CART</li>
+					<li class="dropdown">
+					    <a href="#" class="dropbtn">MEN</a>
+					    <div class="dropdown-content">
+					      <a href="#" id="manShirt">T-shirts</a>
+					      <a href="#" id="manPant">Pants</a>
+					      <a href="#" id="manShoe">Shoes</a>
+					    </div>
+					  </li>
+					  <li class="dropdown">
+					    <a href="#" class="dropbtn">WOMEN</a>
+					    <div class="dropdown-content">
+					      <a href="#" id="womShirt">T-shirts</a>
+					      <a href="#" id="womPant">Pants</a>
+					      <a href="#" id="womShoe">Shoes</a>
+					    </div>
+					  </li>
+					  <li class="dropdown">
+					    <a href="#" class="dropbtn" id="card">CART</a>
+					   
+					  </li>
+									
 				</ul>
 			</nav>
+
 		</header>
 
-		<main>
-			
-		</main>
+		
 		<script src="index.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				var $body = $('body');
 
-				$('#logo').css('height', '400px');
-				$('#logo').css('width', '50%');
-				$('#logo').css('margin-left', '400px');
-				$('#logo').css('margin-top', '-100px');
 
+				
 				var cart = [];
-				var x = {};
+			
 
 				for (var i = 0; i < arrayItems.length; i++){
 					var s = $('<span></span>'); 
-					var s1 = $('<span></span>'); 
-					var s2 = $('<span></span>');
-					var s3 = $('<span></span>')
-					//var button = $('<button id=' + i + '></button>');
-					var button = $('<button> Add </button>');
+					 s.attr('id', 'big');
+					 var s1 = $('<div></div>');
+					 var s2 = $('<div></div>');
+					 var s3 = $('<div></div>');
+					 var s4 = $('<div></div>');
+					
+					var button = $('<button></button>');
 					//button.text('Add');
-					var id = i;
+					button.text(' Add ');
 
-
-		            s1.append(arrayItems[i].picture);
+					var pic = arrayItems[i].picture;
+                    pic.attr('id', 'pic');
+		            s1.append(pic);
 
 					s2.append(arrayItems[i].color);
-					s2.append(arrayItems[i].size);
-					s2.append(arrayItems[i].category);
-					s2.append(arrayItems[i].type);
-	                s3.append(arrayItems[i]) 
-					button.appendTo(s);
+					s2.append("<br/>" + arrayItems[i].size)
+					s2.append("<br/>" + arrayItems[i].price)
+					s2.append("<br/> " +arrayItems[i].category);
+					s2.append(" <br/>" +arrayItems[i].type);
+
+					var imageAdress = arrayItems[i].picture[0].src;
+					
+	                s3.append(" <br/>" +imageAdress).addClass("transparent");
+					button.appendTo(s4);
 
 				    s1.appendTo(s);
 					s2.appendTo(s);
-					s3.appendTo(s);
+					s3.appendTo(s);	
+					s4.appendTo(s);
 					s.appendTo($('body'));
 
 					
 				}
+				 var s = 0;
 
 				$("span").click(function() {
 						
-						//cart.push(this.innerText);
-						console.log(this);
+						  var src = this.innerText;// to get all the item info like in the page 
+                         var arrSrc = this.innerText.split('');//get all the info of the item as an array of letters
+                         //	console.log(arrSrc); 
+						 var imageNameLetters = arrSrc.slice(arrSrc.length - 54, arrSrc.length - 4);// get the src of the image as an array of letters 
+						 
+						 var imageFullName = imageNameLetters.join('');// get the src of the image as a string
+
+						var imageNameArray = imageFullName.split('/');
+						
+						var imageName = imageNameArray[imageNameArray.length-1];
+
+		
+						for (var i = 0; i < arrayItems.length; i++){
+							//console.log(arrayItems[i].picture[0].src);
+							var imageNameArrayItem = arrayItems[i].picture[0].src.split('/');
+
+							var imageNameLastElement = imageNameArrayItem[imageNameArrayItem.length-1];
+
+							 if(imageName === imageNameLastElement){
+
+							 	cart.push(arrayItems[i]);
+							 	alert('you just have purchased '+ arrayItems[i].color + ' '+arrayItems[i].type+' '+' that worth : '+arrayItems[i].price + ' TND');
+							 	s =s +arrayItems[i].price;
+							 
+
+							 	
+
+							}
+						}
+
 					});
 
-			});
-		
-			
+                   console.log(cart);
 
-			
+				 $('#card').click(function(){
+					      alert('you have pirchased the total of '+'\n'+ s +' TND');
+
+					   });
+
+			});
 		
 		</script>
 	</body>
