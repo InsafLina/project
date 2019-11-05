@@ -66,7 +66,9 @@ $(document).ready(function(){
 					 s.attr('class', 'big');
 					 var s1 = $('<div></div>');
 					 var s2 = $('<div></div>');
-					 s2.attr('id', 'text');
+
+					 s2.attr('class', 'text');
+
 					 var s3 = $('<div></div>');
 					 var s4 = $('<div></div>');
 					
@@ -75,7 +77,7 @@ $(document).ready(function(){
 					button.text(' ADD ');
 
 					var pic = arrayItems[i].picture;
-                    pic.attr('id', 'pic');
+                    pic.attr('class', 'pic');
 		            s1.append(pic);
 
 					s2.append("Color: " + arrayItems[i].color + "<br/>");
@@ -136,6 +138,7 @@ $(document).ready(function(){
 				});
 
 
+
 				// $('#card').click(function(){
 				//     alert('you have pirchased the total of '+'\n'+ s +' TND');
 
@@ -149,6 +152,7 @@ $(document).ready(function(){
 					   s = 0;
 					  }
 				});
+
 
 
 
