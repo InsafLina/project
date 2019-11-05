@@ -91,7 +91,7 @@ span:hover{
   cursor:pointer;
 }
 
-#pic{
+.pic{
   display:block;
   margin-left:auto;
   margin-right:auto;
@@ -112,6 +112,14 @@ display:block;
   padding: 10px 15px 10px 15px;
   font-weight: bold;
   border-radius: 10px; 
+}
+
+
+.text{
+  display:block;
+  width:30%;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 
