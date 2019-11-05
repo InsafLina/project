@@ -67,7 +67,10 @@ $(document).ready(function(){
 					 var s1 = $('<div></div>');
 					 var s2 = $('<div></div>');
 
+
 					 s2.attr('class', 'text');
+
+
 
 					 var s3 = $('<div></div>');
 					 var s4 = $('<div></div>');
