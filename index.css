@@ -4,21 +4,24 @@
 	width:50%;
 	margin-left:auto;
 	margin-right:auto;
-  margin-top:-100px;
-}
-img:not(#logo){
-	width: 400px;
 }
 
-img:not(#logo):hover{
-	width: 400px;
+#home {
+  width:30px!important;
+  height:30px;
 }
 
+#home:hover {
+  background-color: #A02338;
+}
 
+img:not(#logo), img:not(#home){
+	width: 300px;
+}
+/* nav */
 ul li {
 	margin-right: 20px;
 }
-
 
 ul {
   list-style-type: none;
@@ -72,11 +75,12 @@ li a:hover, .dropdown:hover .dropbtn {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
+/**/
 span{
-   margin: 14px;
+  /* margin: 14px;*/
   display: inline-block;
   opacity: 0.7;
+  margin-bottom: 50px;
 }
 
 span:hover{
@@ -86,8 +90,12 @@ span:hover{
 #card{
   cursor:pointer;
 }
+
 #pic{
-  width: 320px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  width: 300px;
   height: 300px;
 }
 
@@ -96,5 +104,16 @@ span:hover{
 }
 
 button{
-margin-left:150px;
+display:block;
+  margin-left:auto;
+  margin-right:auto;
+  background-color: #A02338;
+  color:white;
+  padding: 10px 15px 10px 15px;
+  font-weight: bold;
+  border-radius: 10px; 
 }
+
+
+
+/* pop up*/
